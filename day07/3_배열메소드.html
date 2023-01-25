@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>배열 메소드</h2>
+    <script>
+        let scores = [80,50,90];
+        //인덱스번호가 0~2까지
+        console.log(scores);
+        //요소 추가
+        scores[3] = 100;
+        console.log(scores);//[80,50,90,100]
+        
+        let cnt=scores.push(77);
+        console.log(cnt);
+        console.log(scores); // [80,50,90,100,77]
+
+        //마지막 요소 삭제 pop()
+        let res = scores.pop(); // 77
+        console.log(res);
+        console.log(scores) //[80,50,90,100]
+
+        
+        //shift() : 맨앞쪽 요소 삭제
+       //함수 사용 결과는 삭제된 요소
+        let a =scores.shift();
+        console.log(a); //80
+        console.log(scores); //[50,90,100]
+        
+        //splice(인덱스번호,갯수) 중간 요소 삭제
+        //함수 사용 결과는 삭제된 요소들이 들어있는 리스트 
+
+        res =scores.splice(1,1)
+        console.log(res);//[90] 리스트가 들어있다
+        console.log(scores); //[50,100]
+        
+        
+
+        //참고 함수 사용 결과가 값이 아닌 경우에는 undefined
+        // let a = console.log('안녕');
+        // console.log(a);
+    
+    </script>
+</body>
+</html>

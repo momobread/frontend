@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrap{
+            width : 90%;
+            margin : 0 auto;
+            border : 1px solid black;
+            padding : 20px;
+        }
+        #container{
+            border : 1px solid gray;
+            display:flex;
+        }
+        .ex{
+            border : 1px dotted gray;
+            margin:0 20px;
+        }
+        #res-div{
+            background-color: black;
+            /* height:200px; */
+            text-align : center;
+        }
+        p{
+            color : white;
+            font-size:30px;
+            font-weight: 900;
+            line-height: 200px;
+        }
+        span{
+            color : yellow;
+            font-size:50px;
+            display: inline-block;
+            line-height: normal;
+            }
+
+    </style>
+</head>
+<body>
+    <h2>함수실습</h2>
+    <div id="wrap">
+        <div id ="container">
+            <div class="ex">
+                <h3>input 태그를 통해 정수 두개를 입력받고, 
+                    첫번째 정수부터 두번째 정수까지 총합 출력하기
+                </h3>
+                <label>정수 1 <input id="input1-1" type="number"/></label>
+                <label>정수 2 <input id="input1-2" type="number"/></label>
+                <button onclick="button1()">클릭!</button>
+            </div>
+            <div class="ex">
+                <h3>사용자에게 정수 한 개를 입력 받아서
+                    1부터 그 숫자까지 띄어쓰기로 출력하기
+                </h3>
+                <label>정수1<input id="input2" type="number" /></label>
+                <button onclick="button2()">클릭!</button>
+            </div>
+            <div class="ex">
+                <h3> 사용자에게 단을 입력받아서 구구단 출력하기
+                </h3>
+                <label>단 입력>> <input id="input3" type="number" /></label>
+                <button onclick="button3()">클릭!</button>
+            </div>
+        </div>
+        <div id="res-div">
+            <p>결과는 <span id="res">결과자리</span> 입니다</p>
+        </div>
+    </div>
+    <script>
+       
+    
+        function button1(){
+        let num1_1=Number(document.getElementById('input1-1').value);
+        let num1_2=Number(document.getElementById('input1-2').value);
+       
+        // console.log(typeof num1_1);    
+        // console.log(typeof num1_2);    
+        // console.log(typeof num1_1+num1_2);   
+        if(num1_1>num1_2){
+            alert('두번쨰 정수에 더 큰 수를 입력하세요');
+            return; // 함수를 바로 종료
+        } 
+        let sum=0;
+            let i = num1_1;
+            for(;i<=num1_2;i++){
+                sum+=i; 
+            }
+            document.getElementById('res').textContent=sum;
+        }
+
+        function button2(){
+            let num2=Number(document.getElementById('input2').value);
+            let sum2=' ';
+            for(let i=1;i<=num2;i++){
+                sum2+=i+' ';
+            }
+            document.getElementById('res').textContent=sum2;
+        }
+
+        function button3(){
+            let num3=Number(document.getElementById('input3').value);
+            
+            let samdan=`<h3>=====${num3}단=====</h3>`;
+            for(let i =1;i<=9;i++){
+
+                samdan+=`${num3} X ${i} = ${i*num3}<br>`
+            }
+            document.getElementById('res').innerHTML=samdan;
+
+        }
+     </script>
+</body>
+</html>
