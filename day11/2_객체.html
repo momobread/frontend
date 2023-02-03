@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>자바스크립트 객체</h2>
+    <script>
+        let ar =['모모의 아름다운 꼬리',500,'모모',15555];
+        let a = {
+            title : '박시은의 대모험',
+            pages : 500,
+            author : '박시은',
+            price : 150000, // 마지막 콤하는 통일성을 위해 붙이기도 한다
+            "book store" : '역삼', //명령어나 특수묹 등을 방이름으로 설정하고자 한다면
+                                    //작은따옴표로 감쌀 수 있다
+            print : function (sale) {console.log('감사합니다');
+                console.log(`책의 가격은 ${this.price}입니다`);
+                console.log(`${sale}% 할인된 책의 가격은 ${(1-(sale* 0.01)) * this.price}원입니다`)}, 
+                
+            };
+            
+            console.log(a);
+            console.log(ar[2]);
+            //객체 속에 저장된 값을 사용하기 위해서는
+            //1.하위연산자(.)와 방이름을 사용할 수 있다
+            console.log(a.title);
+            //2.인덱스연산자와 방이름을 사용할 수 있다(방이름과 문자열로 알려줘)
+            console.log(a['title']);
+            
+            //방 이름이 작은따옴표,큰따옴표로 감싸진 채로 만들어져 있으면 하위연산자는 사용불가
+            //console.log(a."book store")는 안됨
+            console.log(a["book store"]);
+            a.print(10);
+            
+            let b = {
+                title : '곰세마리',
+                pages : 30,
+                author : '미상',
+                price : 3500,
+                bookstore : '대구',
+                print : function (sale) {
+                    console.log('감사합니다');
+                    console.log(`책의가격은 ${this.price}입니다`);
+                    console.log(`${sale}% 할인된 책의 가격은 ${(1-(sale* 0.01)) * this.price}원입니다`)}, 
+               
+        };
+        b.print(50);
+    </script>
+</body>
+</html>
