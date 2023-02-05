@@ -10,9 +10,50 @@
     <h2>속성과 메소드의 틀을 만들어 놓고, 속성값만 우리가 원하게 바꾸는 방법</h2>
     <script>
         //객체를 만들때 사용하는 함수(생성자) 정의
-        function Book(){
+    
+        //new : 연산자, 만들어진 객체를 메모리에 할당시키는 기능을 한다
+        let a = new Book();
+        // a.title="박시은의 대모험";
+        // a.price=15000;
+        // a.author = '박시은';
+        
+        let d = a;  // d도 a가 가르키는 객체를 가르키고 있다
+        a.title='뽀로로'; //그래서 a의 타이틀을 바꾸면 d의 타이틀도 바뀐다
+        
+        console.log(d.title);
+        console.log(a);
+        
+        a.show();
 
+        let b = new Book('모모의 대모험','박시은',10000);
+        console.log(b);
+        b.show();
+
+        let c = new Book();
+        c.show();
+
+
+
+
+
+
+
+       
+        function Book(title='기본값',author='기본값',price=0){
+            this.title = title;
+            this.author = author;
+            this.price = price;
+            this.show = function(){
+                console.log(`--------!책정보!--------`);
+                console.log(`책제목 : ${this.title}`);
+                console.log(`저자 : ${this.author}`);
+                console.log(`가격 : ${this.price}`);
+            };
         }
+
+        
+
+
     </script>
 </body>
 </html>
