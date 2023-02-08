@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Array객체</h2>
+    <script>
+        let numbers=[10,20,30,40];
+        console.log(numbers);
+
+        for (i of numbers){
+            console.log(i);
+        }
+        console.log("========");
+        //forEach() 함수의 인자에는 (익명)함수를 넘겨주고,
+        //그 익명 함수는 3개의 파라미터를 갖고 있다
+        //각각 element에는 배열속 요소가 대입되고
+        //index에는 배열 속 인덱스가 대입되며
+        //array에는 자기자신 배열이 대입된다
+
+        numbers.forEach((element,index,array) => {     
+            console.log(element);
+            console.log(index);
+            console.log(array);//자기자신
+            console.log("========");
+                });
+
+        let res =numbers.map((value,index,array)=>{
+            return value*2;
+        });
+        // let res =numbers.map((value,index,array)=>value*2);
+        // return 한줄이여서 생략이 가능하다
+        //함수사용결과가 새로운 배열이 된다
+
+        console.log(res)
+
+        let res2=numbers.filter((value,index,array)=>{
+            return value>25;
+            //return 옆에 조건을 써주면 된다
+            // 값이 25보다 큰 것들
+        })
+
+        // let res2=numbers.filter((value,index,array)=> value>25 );
+        console.log(res2);
+
+        let res3 = numbers.find((value,index,array)=>{
+            return index >1 && value % 4 ==0;
+            //인덱스가 1보다 큰것 중에서 값을 4로 나눴을때 
+            //나머지가 0인것을 return해 주세요
+
+        });
+
+        //let res3 = numbers.find((value,index,array)=> index >1 && value % 4 ==0);
+
+        console.log(res3);
+
+        let res4 = numbers.findIndex((value,index,array)=>index>1&&value%4==0);
+        console.log(res4);
+        //조건을 만족시키는 인덱스를 찾아주세요
+
+    </script>
+</body>
+</html>

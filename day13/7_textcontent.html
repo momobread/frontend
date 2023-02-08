@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #s1{
+            display: none;
+        }
+        #s2{
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <h2>textContent와 innerText의 차이점</h2>
+    <p>안녕하세요 <span id ='s1'>반가</span>워요<span id="s2">오늘은</span>수요일입니다</p>
+    <script>
+
+        
+
+        let target=document.querySelector('p');
+        console.log(target.innerText);//사용자가 보이는 부분에서 가져오겠다
+        console.log(target.textContent);//소스상에 있는 모든 text를 가져오겠다/사용자에게 보이지 않는 부분(소스상의 텍스트)
+        console.log(target.innerHTML);//Html전체 코드를 가져오겠따
+        
+        //삽입,대입할때는 상관이없는데 가져올떄만 차이가 난다
+    </script>
+</body>
+</html>
